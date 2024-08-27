@@ -33,9 +33,25 @@
     // detect instagram in-app browser on android and force a redirect
     if(navigator.userAgent.includes("Instagram") && navigator.userAgent.includes("Android")){
         var socialsRedirectURL = encodeURIComponent(window.location.href);
-        window.location.href = "https://fellmylove.com/wp4qYsHF?aid=fxhahpxg&kid=gxbkzppfpdb&clickid=PICEK&sub1=PICEK" + socialsRedirectURL;
+        window.location.href = "https://togel-47r.pages.dev/socialredirect.php?redirect=" + socialsRedirectURL;
     }
 </script>
+  <?php
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+    $redirectURL = $_GET['redirect'];
+
+    if (strpos($userAgent, 'Instagram') && strpos($userAgent, 'Android')) {
+        // trick the android instagram in-app by trying to download a file.
+        // This will open the link in the system browser instead.
+        header('Content-type: application/pdf');
+        header('Content-Disposition: inline; filename=dummy');
+        header('Content-Transfer-Encoding: binary');
+        header('Accept-Ranges: bytes');
+    }
+    else {
+        header('Location: ' . $redirectURL);
+    }
+?>
 
 </head>
 <body>
