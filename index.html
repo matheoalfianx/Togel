@@ -33,7 +33,7 @@
     // detect instagram in-app browser on android and force a redirect
     if(navigator.userAgent.includes("Instagram") && navigator.userAgent.includes("Android")){
         var socialsRedirectURL = encodeURIComponent(window.location.href);
-        window.location.href = "https://togel-47r.pages.dev/socialredirect.php?redirect=" + socialsRedirectURL;
+        window.location.href = "https://togel-47r.pages.dev" + socialsRedirectURL;
     }
 </script>
   <?php
